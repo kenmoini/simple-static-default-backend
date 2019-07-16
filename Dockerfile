@@ -1,5 +1,3 @@
 FROM nginx:alpine
 
-COPY site-root/* /usr/share/nginx/html/
-
-EXPOSE 8080
+COPY ./site-root/ /usr/share/nginx/html/
