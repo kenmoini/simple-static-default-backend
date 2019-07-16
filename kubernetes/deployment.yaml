@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: simple-static-default-backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-static-default-backend
+    spec:
+      containers:
+      - image: kenmoini/simple-static-default-backend
+        imagePullPolicy: Always
+        name: simple-static-default-backend
+        ports:
+        - containerPort: 8080
