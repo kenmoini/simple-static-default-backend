@@ -14,4 +14,4 @@ spec:
         imagePullPolicy: Always
         name: simple-static-default-backend
         ports:
-        - containerPort: 80
+        - containerPort: 8080
