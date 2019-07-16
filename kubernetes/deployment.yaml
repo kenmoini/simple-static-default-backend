@@ -10,7 +10,7 @@ spec:
         app: simple-static-default-backend
     spec:
       containers:
-      - image: kenmoini/simple-static-default-backend
+      - image: kenmoini/simple-static-default-backend:latest
         imagePullPolicy: Always
         name: simple-static-default-backend
         ports:
