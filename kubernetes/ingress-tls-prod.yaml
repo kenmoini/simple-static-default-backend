@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: simple-static-default-backend
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    certmanager.k8s.io/issuer: "letsencrypt-prod"
+    certmanager.k8s.io/acme-challenge-type: http01
+
+spec:
+  tls:
+  - hosts:
+    - example.example.com
+    secretName: simple-static-default-backend-tls
+  rules:
+  - host: example.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: simple-static-default-backend
+          servicePort: 80
